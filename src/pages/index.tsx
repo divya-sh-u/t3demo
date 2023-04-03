@@ -1,10 +1,13 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import  {Header} from '~/components/Header';
+import  {Document} from '~/components/openAiimage'
 import { api } from "~/utils/api";
 import { useTheme } from "~/utils/themeContext";
-
+import { useSession } from "next-auth/react";
+import { Else } from "~/components/Else";
 const Home: NextPage = () => {
+  const { data: session, status } = useSession();
   const { theme } = useTheme();
   return (
     <>
@@ -15,7 +18,9 @@ const Home: NextPage = () => {
       </Head>
       <main data-theme={theme}>
           <Header/>
-          
+          {session && <Document/>}
+          {/* <Document/> */}
+          {!session && <Else/>}
       </main>
     </>
   );

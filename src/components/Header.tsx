@@ -19,9 +19,9 @@ export function Header (props: IHeaderProps) {
   return (
     <div>
       <div className="navbar bg-primary text-primary-content">
-      <div className="flex-1 pl-5 text-3xl font-bold">
+      <div className="flex-1 pl-5 text-3xl font-bold text-center">
         {/* {sessionData?.user?.name ? `Notes for ${sessionData.user.name}` : ""} */}
-        Image Generating App
+        AI Image Generator
       </div>
       <div className="navbar-end">
     <button className="btn btn-ghost btn-circle">
